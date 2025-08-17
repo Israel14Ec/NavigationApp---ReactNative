@@ -3,6 +3,7 @@ import { Slot, SplashScreen } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import "./global.css";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 //Splash que se muestra mientras se carga las fuentes
 SplashScreen.preventAutoHideAsync();
@@ -22,9 +23,13 @@ const RootLayout = () => {
 
   return (
     <>
-      <StatusBar/>
+      <StatusBar />
+      <GestureHandlerRootView>
+        <Slot />
+      </GestureHandlerRootView>
+    
       {/* <Slot /> */}
-      <Slot />
+      {/* <Stack /> */}
     </>
   );
 };
